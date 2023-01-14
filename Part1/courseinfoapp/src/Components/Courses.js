@@ -8,24 +8,24 @@ const Courses = ({ courses }) => {
     );
   };
   
-  const Header = ({ name }) => {
-    return <h2>{name}</h2>;
+  const Header = (props) => {
+    return <h2>{props.name}</h2>;
   };
   
-  const Content = ({ parts }) => {
+  const Content = (props) => {
     return (
       <div>
-        {parts.map((part) => (
+        {props.parts.map((part, i) => (
           <Part key={part.id} name={part.name} exercises={part.exercises} />
         ))}
       </div>
     );
   };
   
-  const Part = ({ name, exercises }) => {
+  const Part = (props) => {
     return (
       <p>
-        {name} {exercises}
+        {props.part.name} {props.part.exercises}
       </p>
     );
   };
